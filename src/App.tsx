@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import Pacote, { type PacoteType } from './Pacote'
 
@@ -19,12 +20,20 @@ const data: Array<PacoteType> = [
 ];
 
 function App() {
+  const [pacotes, setPacotes] = useState(data);
+
+  function excluiPacote(id: string){
+    setPacotes(pacotes.filter(pacote=> pacote.id !== id));
+  }
 
   return (
     <dl>
       {
-        data.map(pacote =>
-          <Pacote key={pacote.id} pacote={pacote} />
+        pacotes.map(pacote =>
+          <div key={pacote.id}>
+            <Pacote  pacote={pacote} />
+            <button onClick={() =>{excluiPacote(pacote.id)}}>x</button>
+          </div>
         )
       }
     </dl>
