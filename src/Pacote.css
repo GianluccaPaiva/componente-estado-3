@@ -1,0 +1,12 @@
+.pacote{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 0.2rem;
+    *{
+        background-color: light-dark(rgba(34, 33, 33, 0.667),#ddda);
+        padding: 0.2rem;
+    }
+    dt{
+        margin: 0;
+    }
+}
