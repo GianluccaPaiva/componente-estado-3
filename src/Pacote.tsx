@@ -24,6 +24,16 @@ export default function Pacote({pacote, onExcluir}:PacoteProps){
                 <dd>{pacote.profundidade}</dd>
                 <dt>Altura (cm)</dt>
                 <dd>{pacote.altura}</dd>
+                <dt>Cubagem (cm³)</dt>
+                <dd>
+                    {
+                        400*
+                        pacote.altura/100 *
+                        pacote.profundidade/100 *
+                        pacote.largura/100
+                    }
+
+                </dd>
                 <dt>Peso (kg)</dt>
                 <dd>{pacote.peso}</dd>
         </div>
