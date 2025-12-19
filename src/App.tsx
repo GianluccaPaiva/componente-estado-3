@@ -30,10 +30,11 @@ function App() {
     <dl>
       {
         pacotes.map(pacote =>
-          <div key={pacote.id}>
-            <Pacote  pacote={pacote} />
-            <button onClick={() =>{excluiPacote(pacote.id)}}>x</button>
-          </div>
+            <Pacote 
+              key={pacote.id} 
+              pacote={pacote} 
+              onExcluir={()=>excluiPacote(pacote.id)} 
+            />
         )
       }
     </dl>
