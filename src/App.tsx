@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
-import Pacote, { type PacoteType } from './Pacote'
+import { type PacoteType } from './Pacote'
+import ListaDePacotes from './ListaDePacotes';
 
 const data: Array<PacoteType> = [
   {
@@ -28,15 +29,10 @@ function App() {
 
   return (
     <dl>
-      {
-        pacotes.map(pacote =>
-            <Pacote 
-              key={pacote.id} 
-              pacote={pacote} 
-              onExcluir={()=>excluiPacote(pacote.id)} 
-            />
-        )
-      }
+      <ListaDePacotes 
+        pacotes={pacotes}
+        excluiPacote={excluiPacote}
+      />
     </dl>
     
   )
